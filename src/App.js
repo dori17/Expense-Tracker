@@ -7,38 +7,48 @@ for (let i = 0; i < 30; i++) {
     arr[i] = i + 1;
 }
 
-function App() {
-    return (
-        <div className="App">
-            <Header>Expense Tracker</Header>
-            <table className="table">
-                <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
-                </tr>
-                </thead>
-                <tbody>
-                {
-                    arr.map(el => (
-                            <tr>
-                                <th scope="row">{el}</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                            </tr>
-                        ))
-                }
+class App extends React.PureComponent {
 
-                </tbody>
-            </table>
-            <div className="new-line">
-                <Button/>
+    constructor(props) {
+        super(props);
+        this.state = {
+          isAddNewLineClicked: false
+        };
+    }
+
+    handleButtonClick = () => {
+        this.setState({isAddNewLineClicked: true})
+    };
+
+    render() {
+        const {isAddNewLineClicked} = this.state;
+        return (
+            <div className="App">
+                <Header>Expense Tracker</Header>
+                <table className="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Person</th>
+                        <th scope="col">Amount</th>
+                        <th scope="col">Currency</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {
+                        arr.map(el => (<TableRow {...el}/>))
+                    }
+
+                    </tbody>
+                </table>
+                {isAddNewLineClicked ? <NewTableRow/> : null}
+                <div className="new-line">
+                    <Button onClick={this.handleButtonClick}/>
+                </div>
             </div>
-        </div>
-    );
+        )
+    }
 }
 
 export default App;

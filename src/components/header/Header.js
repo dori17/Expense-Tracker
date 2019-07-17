@@ -3,7 +3,7 @@ import './Header.css';
 
 const Header = ({children}) => {
    return (
-        <header>
+        <header className="Header">
             {children}
         </header>
     )

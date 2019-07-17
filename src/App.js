@@ -34,6 +34,9 @@ function App() {
 
                 </tbody>
             </table>
+            <div className="new-line">
+                <Button/>
+            </div>
         </div>
     );
 }

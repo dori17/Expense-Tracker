@@ -20,6 +20,16 @@ class App extends React.PureComponent {
         this.setState({isAddNewLineClicked: true})
     };
 
+    handleCancel = () => {
+        this.setState({isAddNewLineClicked: false})
+    };
+
+    addNewLine = (values) => {
+        console.log(values);
+        arr.push(values);
+        this.setState({isAddNewLineClicked: false});
+    };
+
     render() {
         const {isAddNewLineClicked} = this.state;
         return (
@@ -42,9 +52,9 @@ class App extends React.PureComponent {
 
                     </tbody>
                 </table>
-                {isAddNewLineClicked ? <NewTableRow/> : null}
+                {isAddNewLineClicked ? <NewTableRow onAdd={this.addNewLine} onCancel={this.handleCancel}/> : null}
                 <div className="new-line">
-                    <Button onClick={this.handleButtonClick}/>
+                    <Button onClick={this.handleButtonClick} icon="fa fa-plus" className="button-add">Add new line</Button>
                 </div>
             </div>
         )

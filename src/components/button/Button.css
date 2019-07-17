@@ -1,4 +1,4 @@
-.icon {
+button>i.fa {
     padding-right: 5px;
 }
 
@@ -18,4 +18,22 @@
 .button-add:focus {
     background-color: #5a9582;
     outline: 5px auto #71bba3;
+}
+
+.button-cancel {
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    color: #ffffff;
+    background-color: #b43b48;
+}
+
+.button-cancel:hover {
+    background-color: #ce162d;
+}
+
+.button-cancel:focus {
+    background-color: #ce162d;
+    outline: 5px auto #b43b48;
 }

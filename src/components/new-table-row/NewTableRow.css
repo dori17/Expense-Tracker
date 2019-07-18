@@ -1,0 +1,30 @@
+.new-table-row {
+    border: 1px solid #dee2e6;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.flex-row {
+    display: flex;
+    justify-content: space-between;
+    width: 150px;
+}
+
+.input-new-line {
+    text-align: center;
+}
+
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+input[type="date"] {
+    border: 1px solid #dee2e6;
+    color: #000000;
+}

@@ -4,6 +4,7 @@ import Header from "./components/header/Header";
 import TableRow from "./components/table-row/TableRow";
 import Button from "./components/button/Button";
 import NewTableRow from "./components/new-table-row/NewTableRow";
+import CreateGroupModal from "./components/create-group-modal/CreateGroupModal";
 
 export const Currency = {
     usd: 'USD',
@@ -72,11 +73,12 @@ class App extends React.PureComponent {
                         <th scope="col">Currency</th>
                         <th scope="col">Date</th>
                         <th scope="col">Description</th>
+                        <th scope="col">Divide btw group</th>
                     </tr>
                     </thead>
                     <tbody>
                     {
-                        arr.map(el => (<TableRow {...el}/>))
+                        arr.map(el => (<TableRow {...el} onCheck={(person) => alert(person)}/>))
                     }
 
                     </tbody>
@@ -85,6 +87,11 @@ class App extends React.PureComponent {
                 <div className="new-line">
                     <Button onClick={this.handleButtonClick} icon="fa fa-plus" className="button-add">Add new line</Button>
                 </div>
+
+                <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    Launch demo modal
+                </button>
+                <CreateGroupModal/>
             </div>
         )
     }

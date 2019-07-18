@@ -5,6 +5,12 @@
     justify-content: space-around;
 }
 
+.flex-row {
+    display: flex;
+    justify-content: space-between;
+    width: 150px;
+}
+
 .input-new-line {
     text-align: center;
 }
